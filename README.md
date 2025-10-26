@@ -32,6 +32,7 @@ Firstly, to start the SGLang server with the model in a separate terminal / tmux
 CUDA_VISIBLE_DEVICES=0 uv run python3 -m sglang.launch_server \
     --model AlekseyKorshuk/mindgames-in2ai-submission \
     --reasoning-parser deepseek-r1 \
+    --mem-fraction-static 0.75 \
     --dtype bfloat16 \
     --host 0.0.0.0 \
     --port 8000 \

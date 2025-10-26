@@ -15,6 +15,18 @@ from utils import (
 
 GENERATION_PARAMS = {
     "Default": {
+        "temperature": 1.0,
+        "top_p": 1.0,
+    },
+    "Codenames": {
+        "temperature": 1.0,
+        "top_p": 1.0,
+    },
+    "ColonelBlotto": {
+        "temperature": 1.0,
+        "top_p": 1.0,
+    },
+    "ThreePlayerIPD": {
         "temperature": 0.6,
         "top_p": 0.95,
         "extra_body": {
