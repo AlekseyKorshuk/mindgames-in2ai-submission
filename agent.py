@@ -19,18 +19,22 @@ GENERATION_PARAMS = {
         "top_p": 1.0,
     },
     "Codenames": {
-        "temperature": 1.0,
-        "top_p": 1.0,
+        "temperature": 0.70,
+        "top_p": 0.80,
+        "extra_body": {
+            "top_k": 30,
+            "min_p": 0.05,
+        },
     },
     "ColonelBlotto": {
         "temperature": 1.0,
         "top_p": 1.0,
     },
     "ThreePlayerIPD": {
-        "temperature": 0.6,
-        "top_p": 0.95,
+        "temperature": 0.60,
+        "top_p": 0.85,
         "extra_body": {
-            "top_k": 20,
+            "top_k": 30,
             "min_p": 0.0,
         },
     },
