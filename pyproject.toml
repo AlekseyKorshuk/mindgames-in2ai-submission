@@ -18,7 +18,7 @@ dependencies = [
     "pydantic==2.11.7",
     "regex==2025.7.34",
     "Jinja2==3.1.6",
-    "sglang[all]==0.5.3.post3",
+    "sglang[all]==0.5.4",
 ]
 
 [project.optional-dependencies]
