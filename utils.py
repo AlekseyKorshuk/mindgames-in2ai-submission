@@ -17,8 +17,7 @@ def remove_trailing_spaces_keep_blank_lines(text: str) -> str:
 
 def is_colonel_blotto(observation: str) -> bool:
     pattern = re.compile(
-        r"(You are\s+.+?\s+in a game of ColonelBlotto\."
-        r"|COLONEL\s+BLOTTO)",
+        r"(You are\s+.+?\s+in a game of ColonelBlotto\." r"|COLONEL\s+BLOTTO)",
         re.IGNORECASE | re.DOTALL,
     )
     return bool(pattern.search(observation))
@@ -180,10 +179,16 @@ def _ipd_detect_phase(observation: str) -> Literal["conversation", "decision"]:
     obs = observation or ""
     # Find the LAST occurrence of each hint in the observation stream.
     dec_last = None
-    for m in re.compile(r"submit your decisions", re.IGNORECASE).finditer(obs):
+    for m in re.compile(
+        r"^\[GAME\][^\n]*submit your decisions",
+        re.IGNORECASE | re.MULTILINE,
+    ).finditer(obs):
         dec_last = m.start()
     conv_last = None
-    for m in re.compile(r"You can converse freely", re.IGNORECASE).finditer(obs):
+    for m in re.compile(
+        r"^\[GAME\][^\n]*You can converse freely",
+        re.IGNORECASE | re.MULTILINE,
+    ).finditer(obs):
         conv_last = m.start()
 
     if dec_last is not None or conv_last is not None:
