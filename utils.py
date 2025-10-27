@@ -17,7 +17,7 @@ def remove_trailing_spaces_keep_blank_lines(text: str) -> str:
 
 def is_colonel_blotto(observation: str) -> bool:
     pattern = re.compile(
-        r"(You are\s+.+?\s+in a game of ColonelBlotto\." r"|COLONEL\s+BLOTTO)",
+        r"(You are\s+.+?\s+in a game of ColonelBlotto\.|COLONEL\s+BLOTTO)",
         re.IGNORECASE | re.DOTALL,
     )
     return bool(pattern.search(observation))
